@@ -1,0 +1,501 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Racel Tomales | My Portfolio</title>
+
+    <style>
+        /* GENERAL STYLE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #fff0f8, #eee4ff, #fce4ec);
+            color: #493451;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #d98ac5, #a88bea, #f0a6d8);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            font-style: italic;
+            margin: 8px 0;
+            text-shadow: 2px 2px 5px #8954a5;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        .butterfly {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #80509b;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px #d0b5df;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 9px 12px;
+            margin: 4px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #efb6e7;
+            color: #59366e;
+            transform: translateY(-2px);
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        /* PROFILE */
+        .profile {
+            background: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-bottom: 30px;
+            border-radius: 25px;
+            border: 2px solid #e5c5f5;
+            box-shadow: 0 8px 25px rgba(140, 78, 175, 0.18);
+        }
+
+        .profile img {
+            width: 165px;
+            height: 165px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #d98ac5;
+            padding: 4px;
+            background: #fff0f8;
+            box-shadow: 0 5px 15px #e5b6e4;
+            margin-bottom: 12px;
+            transition: 0.4s;
+        }
+
+        .profile img:hover {
+            transform: scale(1.06);
+        }
+
+        .profile h2 {
+            color: #9958b5;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        /* CONTENT SECTIONS */
+        section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            margin-bottom: 28px;
+            border-radius: 22px;
+            border: 1px solid #e8cff5;
+            border-left: 7px solid #c77dbe;
+            box-shadow: 0 7px 20px rgba(140, 78, 175, 0.12);
+            transition: 0.3s;
+        }
+
+        section:hover {
+            box-shadow: 0 10px 28px rgba(140, 78, 175, 0.22);
+            transform: translateY(-3px);
+        }
+
+        section h2 {
+            color: #9555b2;
+            font-family: Georgia, serif;
+            font-size: 27px;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 2px dashed #d9a5e8;
+        }
+
+        section h3 {
+            color: #a45fb9;
+            margin: 12px 0 6px;
+        }
+
+        section p {
+            margin-bottom: 8px;
+            overflow-wrap: anywhere;
+        }
+
+        strong {
+            color: #70428d;
+        }
+
+        /* EDUCATIONAL BACKGROUND */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .education-card {
+            background: linear-gradient(135deg, #fce4f5, #eee3ff);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #ead1f5;
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px #e4c5ef;
+        }
+
+        .education-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #fce4f5, #eee3ff);
+            text-align: center;
+            padding: 20px 10px;
+            border-radius: 15px;
+            border: 1px solid #ead1f5;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            background: #ead1fa;
+        }
+
+        .skill-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        /* EXPERIENCE */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+        }
+
+        .experience-card {
+            padding: 20px;
+            border-radius: 15px;
+            background: #fcf4ff;
+            border-left: 5px solid #c68cdd;
+        }
+
+        .experience-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* CHARACTER REFERENCE */
+        .reference-card {
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f9e8ff, #fceafa);
+            border: 1px solid #ead1f5;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #80509b, #a36dbb);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media screen and (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav {
+                position: static;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 7px 9px;
+                margin: 3px;
+            }
+
+            .container {
+                width: 93%;
+                margin: 20px auto;
+            }
+
+            .profile {
+                padding: 25px 15px;
+            }
+
+            .profile img {
+                width: 135px;
+                height: 135px;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            section h2 {
+                font-size: 23px;
+            }
+
+            .education-grid,
+            .skills-grid,
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="butterfly"></div>
+        <h1>Welcome to My Personal Website</h1>
+        <p>My Portfolio</p>
+        <p>Dream Big, Work Hard, and Keep Growing! 💜</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#personal">Personal Information</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#reference">Character Reference</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- PROFILE -->
+        <div class="profile" id="home">
+            <img src="c:\Users\Administrator\Documents\IMG_20251015_083947_367@1553178512.jpg" alt="Racel Tomales Profile Picture">
+
+            <h2> Hello, I'm Racel Tomales</h2>
+            <p>🌷 Student | Aspiring Software Developer/ Engineer | Future Professional 🌷</p>
+            <p>🦋 Believe in Yourself and Keep Flying High! 🦋</p>
+        </div>
+
+        <!-- PERSONAL INFORMATION -->
+        <section id="personal">
+            <h2>🌸 PERSONAL INFORMATION</h2>
+
+            <p><strong>Full Name:</strong> Racel Tomales</p>
+            <p><strong>Age:</strong> 18</p>
+            <p><strong>Birthday:</strong> February 16 2008</p>
+            <p><strong>Address:</strong> Caluan, Sindangan, Zamboanga del Norte</p>
+            <p><strong>Gender:</strong> Female</p>
+            <p><strong>Email:</strong> raceltomales904@gmail.com</p>
+            <p><strong>Contact Number:</strong> 09978856200</p>
+
+            <br>
+
+            <h3>💗 About Me</h3>
+            <p>
+                I am a College student who is passionate about learning new things,
+                improving my skills, and achieving my goals. I believe that
+                every experience is an opportunity to grow, improve, and
+                become a better version of myself.
+            </p>
+        </section>
+
+        <!-- EDUCATIONAL BACKGROUND -->
+        <section id="education">
+            <h2>🎓 EDUCATIONAL BACKGROUND</h2>
+
+            <div class="education-grid">
+
+                <div class="education-card">
+                    <h3>🎓 College</h3>
+                    <p><strong>School:</strong> Philippine Advent College</p>
+                    <p><strong>Course:</strong> BSCS</p>
+                    <p><strong>Year Level:</strong> First Year</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>🏫 Senior High School</h3>
+                    <p><strong>School:</strong> Sindangan, National, Agricultural, Integrated, School</p>
+                    <p><strong>Strand:</strong> ICT-CSS</p>
+                    <p><strong>Year Graduated:</strong> 2025-2026</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>🏫 Junior High School</h3>
+                    <p><strong>School:</strong> Bartolome Lira Sr. National High School Mandih extension</p>
+                    <p><strong>Year Graduated:</strong> 2023-2024</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>🏫 Elementary</h3>
+                    <p><strong>School:</strong> Lawagan Elementary School</p>
+                    <p><strong>Year Graduated:</strong> 2019-2020</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2>💖 MY SKILLS</h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <p>Basic Computer Skills</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">📄</div>
+                    <p>Microsoft Word and PowerPoint</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <p>HTML and CSS Basics</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">💬</div>
+                    <p>Communication Skills</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🤝</div>
+                    <p>Teamwork and Cooperation</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">⏰</div>
+                    <p>Time Management</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">💡</div>
+                    <p>Willingness to Learn</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <h2>🌷 EXPERIENCE</h2>
+
+            <div class="experience-grid">
+
+                <div class="experience-card">
+                    <h3>🎓 Academic Projects</h3>
+                    <p>
+                        I have participated in school activities and academic
+                        projects that helped me improve my knowledge,
+                        creativity, teamwork, and problem-solving skills.
+                    </p>
+                </div>
+
+                <div class="experience-card">
+                    <h3>💼 Work Experience</h3>
+                    <p>
+                        I participated in the Work Immersion program during my high school. During my work immersion,
+            I gained hands-on experience in encoding data, communicating with people, and maintaining cleanliness in the workplace.
+            I learned how to perform assigned tasks, follow instructiom, and inteact respectfully with others. 
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CHARACTER REFERENCE -->
+        <section id="reference">
+            <h2>🦋 CHARACTER REFERENCE</h2>
+
+            <div class="reference-card">
+                <p><strong>Name:</strong> Mr. Jaypee B. Torrefranca</p>
+                <p><strong>Position:</strong> Instructor</p>
+                <p><strong>Organization:</strong> Philippine Advent College</p>
+                <p><strong>Contact Number:</strong> 09*********</p>
+
+                <br>
+
+                <p>
+                
+                </p>
+            </div>
+        </section>
+        <section id="Contact">
+            <h2>Contact Me</h2>
+            <div class="card" style="text-align: center;">
+                <p>Thank you for visiting my personal portfolio!</p>
+                <p>Email: raceltomales904@gmail.com</p>
+                <p>Phone: 09978856200</p>
+                <p>I am always ready to learn, grow, and embrace new opportunities.</p>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>🦋 © 2026 Racel Tomales | My Personal Portfolio 🦋</p>
+        <p>Believe in Yourself and Keep Flying High! 🌸</p>
+    </footer>
+
+</body>
+</html>
+```
